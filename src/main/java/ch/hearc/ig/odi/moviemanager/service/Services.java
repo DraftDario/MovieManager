@@ -2,9 +2,9 @@ package ch.hearc.ig.odi.moviemanager.service;
 
 import ch.hearc.ig.odi.moviemanager.business.Movie;
 import ch.hearc.ig.odi.moviemanager.business.Person;
-import ch.hearc.ig.odi.moviemanager.exception.InvalidParameterException;
+/*import ch.hearc.ig.odi.moviemanager.exception.InvalidParameterException;
 import ch.hearc.ig.odi.moviemanager.exception.NullParameterException;
-import ch.hearc.ig.odi.moviemanager.exception.UniqueException;
+import ch.hearc.ig.odi.moviemanager.exception.UniqueException;*/
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -69,7 +69,7 @@ public class Services implements Serializable{
         maxMovieId++;
         movies.put(maxMovieId, new Movie(maxMovieId, "Le seigneur des anneaux, le retour du roi", "Peter Jackson"));
         
-        try {
+       /* try {
             people.get(1l).addMovie(movies.get(1l));
             people.get(1l).addMovie(movies.get(3l));
             people.get(1l).addMovie(movies.get(5l));
@@ -97,7 +97,7 @@ public class Services implements Serializable{
             people.get(7l).addMovie(movies.get(2l));
         } catch (UniqueException | NullParameterException ex) {
             // Ne devrait pas arriver
-        }
+        }*/
     }
     
     /**
@@ -106,7 +106,7 @@ public class Services implements Serializable{
      * @param person La personne à insérer ou à mettre à jour
      * @throws ch.hearc.ig.odi.moviemanager.exception.NullParameterException Levée si le paramètre reçu est null
      */
-    public void savePerson(Person person) throws NullParameterException{
+    /*public void savePerson(Person person) throws NullParameterException{
         if(person == null){
             throw new NullParameterException("The parameter person is null");
         }
@@ -117,7 +117,7 @@ public class Services implements Serializable{
         }
         
         people.put(person.getId(), person);
-    }
+    }*/
     
     /**
      * Si l'instance Movie passée en paramètre ne contient pas d'ID, crée un nouveau film
@@ -125,7 +125,7 @@ public class Services implements Serializable{
      * @param movie Le film à insérer ou à mettre à jour
      * @throws ch.hearc.ig.odi.moviemanager.exception.NullParameterException Levée si le paramètre reçu est null
      */
-    public void saveMovie(Movie movie) throws NullParameterException{
+    /*public void saveMovie(Movie movie) throws NullParameterException{
         if(movie == null){
             throw new NullParameterException("The parameter movie is null");
         }
@@ -136,7 +136,7 @@ public class Services implements Serializable{
         }
         
         movies.put(movie.getId(), movie);
-    }
+    }*/
     
     /**
      * Retourne une List contenant toutes les personnes du système.
@@ -163,17 +163,17 @@ public class Services implements Serializable{
      * @throws NullParameterException Levée si un des deux paramètres est null
      * @throws InvalidParameterException Levée si la personne ne contient pas le film, ou si le film ne contient pas la personne
      */
-    public void removeMovieFromPerson(Person person, Movie movie) throws NullParameterException, InvalidParameterException{
+    /*public void removeMovieFromPerson(Person person, Movie movie) throws NullParameterException, InvalidParameterException{
         if(person == null){
             throw new NullParameterException("Person is null");
-        }
+    }
         
         if(movie == null){
             throw new NullParameterException("Movie is null");
         }
         
         people.get(person.getId()).removeMovie(movies.get(movie.getId()));
-    }
+    }*/
     
     /**
      * Crée la relation entre un film et une personne
@@ -182,7 +182,7 @@ public class Services implements Serializable{
      * @throws NullParameterException Levée si un paramètre est null
      * @throws UniqueException Levée si la personne a déjà vu ce film, ou si ce film possède déjà la personne
      */
-    public void addMovieToPerson(Person person, Movie movie) throws NullParameterException, UniqueException{
+    /*public void addMovieToPerson(Person person, Movie movie) throws NullParameterException, UniqueException{
         if(person == null){
             throw new NullParameterException("Person is null");
         }
@@ -192,7 +192,7 @@ public class Services implements Serializable{
         }
         
         people.get(person.getId()).addMovie(movies.get(movie.getId()));
-    }
+    }*/
     
     /**
      * Retourne le film correspondant à l'ID passé en paramètre, ou null si aucune personne ne correspond
