@@ -9,17 +9,17 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <head>
-        <title>TODO supply a title</title>
+        <title>#{msg.odi}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
         <ui:composition template="/main.xhtml">
-            <ui:define name="top">WELCOME TO MOVIE MANAGER!</ui:define>
+            <ui:define name="top">#{msg.homePage}</ui:define>
             <ui:define name="content">
                 <h1>Website in construction...</h1>
                 <h2>Loading...</h2>
             </ui:define>
-            <ui:define name="bottom">ODI 2016</ui:define>
+            <ui:define name="bottom">#{msg.odi}</ui:define>
         </ui:composition>
     </body>
 </html>
