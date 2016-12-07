@@ -67,8 +67,9 @@ public class Person {
         this.movies = movies;
     }
 
-    public void addMovie(Movie movie) throws NullParameterException, UniqueException{
+    public void addMovie(Movie movie) throws NullParameterException, UniqueException {
         this.movies.add(movie);
+        movie.addPerson(this);
     }
 
     public void removeMovie(Movie movie) {
