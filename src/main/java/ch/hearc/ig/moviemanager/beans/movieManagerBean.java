@@ -3,9 +3,10 @@ package ch.hearc.ig.moviemanager.beans;
 import ch.hearc.ig.odi.moviemanager.business.Movie;
 import ch.hearc.ig.odi.moviemanager.business.Person;
 import ch.hearc.ig.odi.moviemanager.service.Services;
+import java.io.Serializable;
 import java.util.List;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 /**
@@ -14,8 +15,8 @@ import javax.inject.Inject;
  * @author dario.mosca
  */
 @Named(value = "movieManager")
-@RequestScoped
-public class movieManagerBean {
+@ViewScoped
+public class movieManagerBean implements Serializable{
 
     @Inject
     Services services;

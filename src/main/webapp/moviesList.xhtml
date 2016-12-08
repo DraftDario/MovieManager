@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{moviesList.personID}"></f:viewParam>
+        <f:viewAction action="#{moviesList.init()}"></f:viewAction>
+    </f:metadata>
+    <body>
+        <ui:composition template="/main.xhtml">
+            <ui:define name="top">#{msg.personMoviesList}</ui:define>
+            <ui:define name="content">
+                <label>#{msg.id}: #{moviesList.personID}</label>
+                <br/>
+                <label>#{msg.fn}: #{moviesList.person.firstName}</label>
+                <br/>
+                <label>#{msg.ln}: #{moviesList.person.lastName}</label>
+
+                <h:form>
+                    <h:commandButton value="#{msg.edit}" action ="index"/>
+                    <!--CHANGER index par le nav rule et bonne page-->
+                </h:form>
+                <h1>#{msg.peopleList}</h1>
+                <h:form>
+                    <h:dataTable value="#{moviesList.person.movies}" var="movie">
+                        <h:column>
+                            <f:facet name="header">#{msg.id}</f:facet>
+                                #{movie.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">#{msg.movieName}</f:facet>
+                            <h:link outcome="moviesList.xhtml" value="#{movie.name}">
+                                <f:param name="id" value="#{movie.id}"/>
+                            </h:link>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">#{msg.prod}</f:facet>
+                                #{movie.producer}
+                        </h:column>
+                        <h:column>
+                            <h:commandLink action="#{moviesList.deleteMovie(movie)}">
+                                <h:graphicImage library="images" name="delete-16.ico"/>
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                    #{msg.addNewFilm}
+                    <h:selectOneMenu disabled="empty #{moviesList.otherMovies}" value="#{moviesList.movie}" id="addmov">
+                        <f:converter binding="#{converter}"/>
+                        <f:selectItems value="#{moviesList.otherMovies}" var="m" itemLabel="#{m.name}"/>
+                    </h:selectOneMenu>
+                    <h:commandButton value="#{msg.add}" action ="#{moviesList.addMovie()}"/>
+                    <br/>
+                    <h:commandButton value="#{msg.home}" action ="index.xhtml?faces-redirect=true"/>
+                    <!--CHANGER index par le nav rule-->
+
+                </h:form>
+            </ui:define>
+            <ui:define name="bottom">#{msg.odi}</ui:define>
+        </ui:composition>
+    </body>
+</html>
