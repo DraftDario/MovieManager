@@ -23,6 +23,35 @@ and open the template in the editor.
                 <label>#{msg.fn}: #{moviesList.person.firstName}</label>
                 <br/>
                 <label>#{msg.ln}: #{moviesList.person.lastName}</label>
+
+                <h:form>
+                    <h:commandButton value="#{msg.edit}" action ="index"/>
+                    <!--CHANGER index par le nav rule et bonne page-->
+                </h:form>
+                <h1>#{msg.peopleList}</h1>
+                <h:form>
+                    <h:dataTable value="#{moviesList.person.movies}" var="movie">
+                        <h:column>
+                            <f:facet name="header">#{msg.id}</f:facet>
+                                #{movie.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">#{msg.movieName}</f:facet>
+                            <h:link outcome="moviesList.xhtml" value="#{movie.name}">
+                                <f:param name="id" value="#{movie.id}"/>
+                            </h:link>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">#{msg.prod}</f:facet>
+                                #{movie.producer}
+                        </h:column>
+                        <h:column>
+                            <h:commandLink action="#{moviesList.deleteMovie(movie)}">
+                                <h:graphicImage library="images" name="delete-16.ico"/>
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
             </ui:define>
             <ui:define name="bottom">#{msg.odi}</ui:define>
         </ui:composition>

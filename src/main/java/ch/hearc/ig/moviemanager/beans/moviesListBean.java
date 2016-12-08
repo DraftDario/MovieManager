@@ -10,11 +10,9 @@ import ch.hearc.ig.odi.moviemanager.business.Person;
 import ch.hearc.ig.odi.moviemanager.exception.InvalidParameterException;
 import ch.hearc.ig.odi.moviemanager.exception.NullParameterException;
 import ch.hearc.ig.odi.moviemanager.service.Services;
-import java.io.IOException;
-import java.util.List;
+import java.io.Serializable;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 
 /**
@@ -22,13 +20,12 @@ import javax.inject.Inject;
  * @author dario.mosca
  */
 @Named(value = "moviesList")
-@RequestScoped
-public class moviesListBean {
+@ViewScoped
+public class moviesListBean implements Serializable {
 
     @Inject
     Services services;
 
-    private List<Movie> moviesList;
     private Person person;
     private Long personID;
 
@@ -54,14 +51,6 @@ public class moviesListBean {
         this.person = person;
     }
 
-    public List<Movie> getMoviesList() {
-        return moviesList;
-    }
-
-    public void setMoviesList(List<Movie> moviesList) {
-        this.moviesList = moviesList;
-    }
-
     /**
      * Retrieves the person object corresponding to the request's parameter id
      *
@@ -70,14 +59,7 @@ public class moviesListBean {
         person = services.getPersonWithId(personID);
     }
 
-    public String deleteMovie() throws NullParameterException, InvalidParameterException {
-        String idParam = FacesContext
-                .getCurrentInstance()
-                .getExternalContext()
-                .getRequestParameterMap().get("deleteId");
-        Movie movDel = services.getMovieWithId(Long.parseLong(idParam));
-        services.removeMovieFromPerson(person, movDel);
-        return "moviesList.xhtml?faces-redirect=true";
+    public void deleteMovie(Movie movie) throws NullParameterException, InvalidParameterException {
+        services.removeMovieFromPerson(person, movie);
     }
-
 }
