@@ -51,6 +51,16 @@ and open the template in the editor.
                             </h:commandLink>
                         </h:column>
                     </h:dataTable>
+
+                    <h:selectOneMenu disabled="empty #{moviesList.otherMovies}" value="#{moviesList.movie}" id="addmov">
+                        <f:converter binding="#{converter}"/>
+                        <f:selectItems value="#{moviesList.otherMovies}" var="m" itemLabel="#{m.name}"/>
+                    </h:selectOneMenu>
+                    <h:commandButton value="#{msg.add}" action ="#{moviesList.addMovie()}"/>
+                    <br/>
+                    <h:commandButton value="#{msg.home}" action ="index.xhtml?faces-redirect=true"/>
+                    <!--CHANGER index par le nav rule-->
+
                 </h:form>
             </ui:define>
             <ui:define name="bottom">#{msg.odi}</ui:define>
