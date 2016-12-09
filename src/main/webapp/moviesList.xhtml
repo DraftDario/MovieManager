@@ -28,7 +28,7 @@ and open the template in the editor.
                     <h:commandButton value="#{msg.edit}" action ="index"/>
                     <!--CHANGER index par le nav rule et bonne page-->
                 </h:form>
-                <h1>#{msg.peopleList}</h1>
+                <h1>#{msg.personMoviesList}</h1>
                 <h:form>
                     <h:dataTable value="#{moviesList.person.movies}" var="movie">
                         <h:column>
@@ -37,7 +37,7 @@ and open the template in the editor.
                         </h:column>
                         <h:column>
                             <f:facet name="header">#{msg.movieName}</f:facet>
-                            <h:link outcome="moviesList.xhtml" value="#{movie.name}">
+                            <h:link outcome="details.xhtml" value="#{movie.name}">
                                 <f:param name="id" value="#{movie.id}"/>
                             </h:link>
                         </h:column>
@@ -53,7 +53,7 @@ and open the template in the editor.
                     </h:dataTable>
                     #{msg.addNewFilm}
                     <h:selectOneMenu disabled="empty #{moviesList.otherMovies}" value="#{moviesList.movie}" id="addmov">
-                        <f:converter binding="#{converter}"/>
+                        <f:converter binding="#{moviesConverter}"/>
                         <f:selectItems value="#{moviesList.otherMovies}" var="m" itemLabel="#{m.name}"/>
                     </h:selectOneMenu>
                     <h:commandButton value="#{msg.add}" action ="#{moviesList.addMovie()}"/>

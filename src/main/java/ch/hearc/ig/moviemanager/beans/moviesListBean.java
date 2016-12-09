@@ -19,6 +19,7 @@ import javax.inject.Inject;
 
 /**
  * This bean is for moviesList.xhtml
+ *
  * @author dario.mosca
  */
 @Named(value = "moviesList")
@@ -40,6 +41,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Getter for movie
+     *
      * @return the movie
      */
     public Movie getMovie() {
@@ -48,6 +50,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Setter for movie
+     *
      * @param movie parameter to set
      */
     public void setMovie(Movie movie) {
@@ -56,6 +59,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Getter for personID
+     *
      * @return the person's ID
      */
     public Long getPersonID() {
@@ -64,6 +68,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Setter for personID
+     *
      * @param personID the parameter to set
      */
     public void setPersonID(Long personID) {
@@ -72,6 +77,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Getter for person
+     *
      * @return the person
      */
     public Person getPerson() {
@@ -80,6 +86,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Setter for person
+     *
      * @param person the parameter to set
      */
     public void setPerson(Person person) {
@@ -96,6 +103,7 @@ public class moviesListBean implements Serializable {
 
     /**
      * Delete a movie from the movieList for the current person
+     *
      * @param movie the movie to delete
      * @throws NullParameterException exception if null parameter
      * @throws InvalidParameterException exception if parameter not valid
@@ -105,7 +113,9 @@ public class moviesListBean implements Serializable {
     }
 
     /**
-     * Method to get all the movies that are not in the current person movies' list
+     * Method to get all the movies that are not in the current person movies'
+     * list
+     *
      * @return the list of other movies
      */
     public List getOtherMovies() {
@@ -126,12 +136,13 @@ public class moviesListBean implements Serializable {
 
     /**
      * Method to add a movie in the current person movies' list
+     *
      * @throws NullParameterException if parameter null
      * @throws UniqueException if not unique
      */
     public void addMovie() throws NullParameterException, UniqueException {
         if (movie != null) {
-            person.addMovie(movie);
+            services.addMovieToPerson(person, movie);
         }
     }
 }
