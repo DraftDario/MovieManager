@@ -184,7 +184,7 @@ public class Services implements Serializable {
         }
 
         people.get(person.getId()).removeMovie(movies.get(movie.getId()));
-        //Ajout du lien contraire
+        //Ajout du lien contraire PAS DE BUG SI JE LE METS
         movies.get(movie.getId()).removePerson(people.get(person.getId()));
     }
 
@@ -207,8 +207,8 @@ public class Services implements Serializable {
         }
 
         people.get(person.getId()).addMovie(movies.get(movie.getId()));
-        //Ajout du lien contraire
-        movies.get(movie.getId()).addPerson(people.get(person.getId()));
+        //Ajout du lien contraire DOUBLE LA PERSONNE POUR LE FILM SI JE LE METS
+       // movies.get(movie.getId()).addPerson(people.get(person.getId()));
     }
 
     /**
