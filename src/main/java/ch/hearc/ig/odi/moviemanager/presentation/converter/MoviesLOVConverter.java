@@ -18,9 +18,9 @@ import javax.inject.Inject;
  *
  * @author dario.mosca
  */
-@Named(value = "converter")
+@Named(value = "moviesConverter")
 @RequestScoped
-public class LOVConverter implements Converter {
+public class MoviesLOVConverter implements Converter {
 
     @Inject
     Services services;
@@ -28,7 +28,7 @@ public class LOVConverter implements Converter {
     /**
      * Creates a new instance of LOVConverter
      */
-    public LOVConverter() {
+    public MoviesLOVConverter() {
     }
 
     /**
