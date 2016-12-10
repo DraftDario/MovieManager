@@ -145,4 +145,12 @@ public class moviesListBean implements Serializable {
             services.addMovieToPerson(person, movie);
         }
     }
+
+    /**
+     * Return to edit page
+     * @return the edit.xhtml page with the personID
+     */
+    public String edit() {
+        return "edit.xhtml?faces-redirect=true&id=" + personID;
+    }
 }

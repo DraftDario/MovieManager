@@ -25,7 +25,8 @@ and open the template in the editor.
                 <label>#{msg.ln}: #{moviesList.person.lastName}</label>
 
                 <h:form>
-                    <h:commandButton value="#{msg.edit}" action ="index.xhtml?faces-redirect=true"/>
+                    <h:commandButton value="#{msg.edit}" action ="#{moviesList.edit()}">
+                    </h:commandButton>
                     <!--CHANGER index par le nav rule et bonne page-->
                 </h:form>
                 <h1>#{msg.personMoviesList}</h1>
