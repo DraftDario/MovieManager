@@ -95,9 +95,10 @@ public class movieDetailsBean implements Serializable {
     public void init() {
         movie = services.getMovieWithId(movieID);
     }
-    
+
     /**
      * Return the parge for editing the current movie
+     *
      * @return the editMovies.xhtml page
      */
     public String edit() {

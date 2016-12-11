@@ -24,12 +24,9 @@ and open the template in the editor.
                 <label>#{msg.movieName}: #{movieDetails.movie.name}</label>
                 <br/>
                 <label>#{msg.prod}: #{movieDetails.movie.producer}</label>
-
                 <h:form>
                     <h:commandButton value="#{msg.edit}" action ="#{movieDetails.edit()}"/>
-
                 </h:form>
-
                 <h1>#{msg.moviePeopleList}</h1>
 
                 <h:dataTable value="#{movieDetails.movie.people}" var="person">

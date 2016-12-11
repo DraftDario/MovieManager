@@ -22,7 +22,7 @@
         </navigation-case>
     </navigation-rule>
     
-        <navigation-rule>
+    <navigation-rule>
         <from-view-id>editMovies.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>resetForm</from-outcome>
@@ -70,7 +70,7 @@
         </navigation-case>
     </navigation-rule>
     
-        <navigation-rule>
+    <navigation-rule>
         <from-view-id>details.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>detailsPerson</from-outcome>

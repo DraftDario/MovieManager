@@ -208,7 +208,7 @@ public class Services implements Serializable {
 
         people.get(person.getId()).addMovie(movies.get(movie.getId()));
         //Ajout du lien contraire DOUBLE LA PERSONNE POUR LE FILM SI JE LE METS
-       // movies.get(movie.getId()).addPerson(people.get(person.getId()));
+        // movies.get(movie.getId()).addPerson(people.get(person.getId()));
     }
 
     /**

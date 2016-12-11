@@ -6,13 +6,13 @@
 package ch.hearc.ig.odi.moviemanager.exception;
 
 /**
- *
+ * Exception class for NULL parameter
  * @author dario.mosca
  */
-public class NullParameterException extends Exception{
+public class NullParameterException extends Exception {
 
     public NullParameterException(String message) {
         super(message);
     }
-    
+
 }

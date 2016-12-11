@@ -124,7 +124,6 @@ public class editPeopleBean implements Serializable {
         } else {
             return "resetForm";
         }
-
     }
 
     /**

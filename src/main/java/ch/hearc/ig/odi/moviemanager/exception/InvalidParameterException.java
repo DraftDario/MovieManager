@@ -6,9 +6,9 @@
 package ch.hearc.ig.odi.moviemanager.exception;
 
 /**
- *
+ * Exception class for invalid parameter
  * @author dario.mosca
  */
-public class InvalidParameterException extends Exception{
-    
+public class InvalidParameterException extends Exception {
+
 }

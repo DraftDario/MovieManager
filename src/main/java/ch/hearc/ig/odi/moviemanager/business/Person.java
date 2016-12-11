@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Business class Person 
  * @author dario.mosca
  */
 public class Person {

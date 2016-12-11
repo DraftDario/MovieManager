@@ -15,7 +15,7 @@ import javax.faces.convert.Converter;
 import javax.inject.Inject;
 
 /**
- *
+ * LOV converter for movies
  * @author dario.mosca
  */
 @Named(value = "moviesConverter")

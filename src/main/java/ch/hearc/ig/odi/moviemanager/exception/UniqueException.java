@@ -6,7 +6,7 @@
 package ch.hearc.ig.odi.moviemanager.exception;
 
 /**
- *
+ * Exception class for unique check
  * @author dario.mosca
  */
 public class UniqueException extends Exception {

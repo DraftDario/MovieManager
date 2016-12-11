@@ -16,7 +16,7 @@ import javax.inject.Inject;
  */
 @Named(value = "movieManager")
 @ViewScoped
-public class movieManagerBean implements Serializable{
+public class movieManagerBean implements Serializable {
 
     @Inject
     Services services;

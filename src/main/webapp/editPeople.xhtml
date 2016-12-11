@@ -16,7 +16,6 @@ and open the template in the editor.
     </f:metadata>
     <body>
         <ui:composition template="/main.xhtml">
-
             <ui:define name="top"> 
                 <h:panelGroup rendered="#{editPeople.personID != null}">
                     #{msg.editPerson}
@@ -26,7 +25,6 @@ and open the template in the editor.
                     #{msg.newPerson}
                 </h:panelGroup>
             </ui:define>
-
             <ui:define name="content">
                 <h:form>
                     <h:panelGroup rendered="#{editPeople.personID != null}">

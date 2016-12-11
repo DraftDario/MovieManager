@@ -16,17 +16,14 @@ and open the template in the editor.
     </f:metadata>
     <body>
         <ui:composition template="/main.xhtml">
-
             <ui:define name="top"> 
                 <h:panelGroup rendered="#{editMovies.movieID != null}">
                     #{msg.editMovie}
                 </h:panelGroup>
-
                 <h:panelGroup rendered="#{editMovies.movieID == null}">
                     #{msg.newMovie}
                 </h:panelGroup>
             </ui:define>
-
             <ui:define name="content">
                 <h:form>
                     <h:panelGroup rendered="#{editMovies.movieID != null}">

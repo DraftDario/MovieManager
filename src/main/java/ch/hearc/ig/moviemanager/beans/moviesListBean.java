@@ -115,7 +115,7 @@ public class moviesListBean implements Serializable {
     /**
      * Method to get all the movies that are not in the current person movies'
      * list
-     *
+     * 
      * @return the list of other movies
      */
     public List getOtherMovies() {

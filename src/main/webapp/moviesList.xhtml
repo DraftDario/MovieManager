@@ -23,7 +23,6 @@ and open the template in the editor.
                 <label>#{msg.fn}: #{moviesList.person.firstName}</label>
                 <br/>
                 <label>#{msg.ln}: #{moviesList.person.lastName}</label>
-
                 <h:form>
                     <h:commandButton value="#{msg.edit}" action ="#{moviesList.edit()}">
                     </h:commandButton>
@@ -59,7 +58,6 @@ and open the template in the editor.
                     <h:commandButton value="#{msg.add}" action ="#{moviesList.addMovie()}"/>
                     <br/>
                     <h:commandButton value="#{msg.home}" action ="#{moviesList.returnHome()}"/>
-
                 </h:form>
             </ui:define>
             <ui:define name="bottom">#{msg.odi}</ui:define>

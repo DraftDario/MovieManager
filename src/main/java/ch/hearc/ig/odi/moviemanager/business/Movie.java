@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Business class for Movie
  * @author dario.mosca
  */
 public class Movie {
