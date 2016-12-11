@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <f:metadata>
+        <f:viewParam name="id" value="#{editPeople.personID}"></f:viewParam>
+        <f:viewAction action="#{editPeople.init()}"></f:viewAction>
+    </f:metadata>
+    <body>
+        <ui:composition template="/main.xhtml">
+
+            <ui:define name="top"> 
+                <h:panelGroup rendered="#{editPeople.personID != null}">
+                    #{msg.editPerson}
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{editPeople.personID == null}">
+                    #{msg.newPerson}
+                </h:panelGroup>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <h:panelGroup rendered="#{editPeople.personID != null}">
+                        <label>#{msg.id}</label>
+                        <h:outputText title="#{msg.id}" 
+                                      value="#{editPeople.person.id}">
+                        </h:outputText>
+                    </h:panelGroup>
+                    <br/>
+                    <label>#{msg.fn}</label>
+                    <h:inputText title="#{msg.fn}" 
+                                 value="#{editPeople.person.firstName}" required="true">
+                    </h:inputText>
+                    <br/>
+                    <label>#{msg.ln}</label>
+                    <h:inputText title="#{msg.ln}" 
+                                 value="#{editPeople.person.lastName}" required="true">
+                    </h:inputText>
+                    <br/>
+                    <h:commandButton value="#{msg.reset}" action="#{editPeople.resetPerson}" />
+                    <h:commandButton rendered="#{editPeople.personID != null}" value="#{msg.ok}" action="#{editPeople.updatePerson}"/>
+                    <h:commandButton rendered="#{editPeople.personID == null}" value="#{msg.ok}" action="#{editPeople.addPerson}"/>
+                    <h:commandButton value="#{msg.cancel}" action="#{editPeople.returnHome()}" immediate="true" />           
+                </h:form>
+            </ui:define>
+            <ui:define name="bottom">#{msg.odi}</ui:define>
+        </ui:composition>
+    </body>
+</html>

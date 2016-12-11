@@ -27,7 +27,7 @@ and open the template in the editor.
 
                 <h:form>
                     <h:commandButton value="#{msg.edit}" action ="index.xhtml?faces-redirect=true"/>
-                    <!--CHANGER index par le nav rule et bonne page-->
+                    <!--CHANGER index par bonne page-->
                 </h:form>
 
                 <h1>#{msg.moviePeopleList}</h1>
@@ -39,7 +39,7 @@ and open the template in the editor.
                     </h:column>
                     <h:column>
                         <f:facet name="header">#{msg.fn}</f:facet>
-                        <h:link outcome="moviesList.xhtml" value="#{person.firstName}">
+                        <h:link outcome="detailsPerson" value="#{person.firstName}">
                             <f:param name="id" value="#{person.id}"/>
                         </h:link>
                     </h:column>
@@ -51,7 +51,6 @@ and open the template in the editor.
                 <br/>
                 <h:form>
                     <h:commandButton value="#{msg.home}" action ="index.xhtml?faces-redirect=true"/>
-                    <!--CHANGER index par le nav rule-->
                 </h:form>
             </ui:define>
             <ui:define name="bottom">#{msg.odi}</ui:define>

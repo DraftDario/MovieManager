@@ -29,7 +29,7 @@ and open the template in the editor.
                     </h:column>
                     <h:column>
                         <f:facet name="header">#{msg.ln}</f:facet>
-                        <h:link outcome="moviesList.xhtml" value="#{peopleList.lastName}">
+                        <h:link outcome="moviesPerson" value="#{peopleList.lastName}">
                             <f:param name="id" value="#{peopleList.id}"/>
                         </h:link>
                     </h:column>
@@ -39,8 +39,7 @@ and open the template in the editor.
                     </h:column>
                 </h:dataTable>
                 <h:form>
-                    <h:commandButton value="#{msg.add}" action ="index.xhtml?faces-redirect=true"/>
-                    <!--CHANGER index par le nav rule-->
+                    <h:commandButton value="#{msg.add}" action ="addPerson"/>
                 </h:form>
 
                 <h1> #{msg.moviesList} </h1>
@@ -51,7 +50,7 @@ and open the template in the editor.
                     </h:column>
                     <h:column>
                         <f:facet name="header">#{msg.movieName}</f:facet>
-                            <h:link outcome="details.xhtml" value="#{movieList.name}">
+                            <h:link outcome="detailsMovie" value="#{movieList.name}">
                             <f:param name="id" value="#{movieList.id}"/>
                         </h:link>
                     </h:column>
@@ -66,7 +65,6 @@ and open the template in the editor.
                 </h:dataTable>
                 <h:form>
                     <h:commandButton value="#{msg.add}" action ="index.xhtml?faces-redirect=true"/>
-                    <!--CHANGER index par le nav rule-->
                 </h:form>
 
             </ui:define>
