@@ -13,4 +13,60 @@
             <default-locale>fr</default-locale>
         </locale-config>
     </application>
+    
+    <navigation-rule>
+        <from-view-id>editPeople.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>resetForm</from-outcome>
+            <to-view-id>editPeople.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>addPerson</from-outcome>
+            <to-view-id>editPeople.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>addMovie</from-outcome>
+            <to-view-id>editMovies.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>moviesPerson</from-outcome>
+            <to-view-id>moviesList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>detailsMovie</from-outcome>
+            <to-view-id>details.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>moviesList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>detailMovie</from-outcome>
+            <to-view-id>details.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+        <navigation-rule>
+        <from-view-id>details.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>detailsPerson</from-outcome>
+            <to-view-id>moviesList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

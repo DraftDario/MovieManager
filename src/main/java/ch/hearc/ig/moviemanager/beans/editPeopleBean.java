@@ -34,10 +34,12 @@ public class editPeopleBean implements Serializable {
      * Creates a new instance of editPeopleBean
      */
     public editPeopleBean() {
+        this.person = new Person();
     }
 
     /**
      * Getter for person
+     *
      * @return the person
      */
     public Person getPerson() {
@@ -46,6 +48,7 @@ public class editPeopleBean implements Serializable {
 
     /**
      * Setter for person
+     *
      * @param person the parameter to set
      */
     public void setPerson(Person person) {
@@ -54,6 +57,7 @@ public class editPeopleBean implements Serializable {
 
     /**
      * Getter ofr personID
+     *
      * @return the person's ID
      */
     public Long getPersonID() {
@@ -62,10 +66,12 @@ public class editPeopleBean implements Serializable {
 
     /**
      * Setter for personID
+     *
      * @param personID the parameter to set
      */
     public void setPersonID(Long personID) {
         this.personID = personID;
+        this.person = services.getPersonWithId(personID);
     }
 
     /**
@@ -84,6 +90,7 @@ public class editPeopleBean implements Serializable {
 
     /**
      * update the person with new values and return to index.xhtml
+     *
      * @return the xhtml page
      */
     public String updatePerson() {
@@ -94,8 +101,9 @@ public class editPeopleBean implements Serializable {
 
     /**
      * add a person in the list
+     *
      * @return the xhtml page index
-     * @throws NullParameterException if null 
+     * @throws NullParameterException if null
      */
     public String addPerson() throws NullParameterException {
         person.setMovies(new ArrayList<Movie>());
@@ -104,17 +112,24 @@ public class editPeopleBean implements Serializable {
     }
 
     /**
-     * Reset the current person's firstname and lastname 
+     * Reset the current person's firstname and lastname
+     *
      * @return the xhtml page edit
      */
     public String resetPerson() {
         this.person.setFirstName("");
         this.person.setLastName("");
-        return "edit.xhtml?faces-redirect=true&id=" + personID;
+        if (personID != null) {
+            return "editPeople.xhtml?faces-redirect=true&id=" + personID;
+        } else {
+            return "resetForm";
+        }
+
     }
 
     /**
      * return in the homepage
+     *
      * @return the index.xhtml page
      */
     public String returnHome() {

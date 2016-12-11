@@ -38,7 +38,7 @@ and open the template in the editor.
                         </h:column>
                         <h:column>
                             <f:facet name="header">#{msg.movieName}</f:facet>
-                            <h:link outcome="details.xhtml" value="#{movie.name}">
+                            <h:link outcome="detailMovie" value="#{movie.name}">
                                 <f:param name="id" value="#{movie.id}"/>
                             </h:link>
                         </h:column>
@@ -59,8 +59,7 @@ and open the template in the editor.
                     </h:selectOneMenu>
                     <h:commandButton value="#{msg.add}" action ="#{moviesList.addMovie()}"/>
                     <br/>
-                    <h:commandButton value="#{msg.home}" action ="index.xhtml?faces-redirect=true"/>
-                    <!--CHANGER index par le nav rule-->
+                    <h:commandButton value="#{msg.home}" action ="#{moviesList.returnHome()}"/>
 
                 </h:form>
             </ui:define>

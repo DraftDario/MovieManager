@@ -148,9 +148,19 @@ public class moviesListBean implements Serializable {
 
     /**
      * Return to edit page
+     *
      * @return the edit.xhtml page with the personID
      */
     public String edit() {
-        return "edit.xhtml?faces-redirect=true&id=" + personID;
+        return "editPeople.xhtml?faces-redirect=true&id=" + personID;
+    }
+
+    /**
+     * return in the homepage
+     *
+     * @return the index.xhtml page
+     */
+    public String returnHome() {
+        return "index.xhtml?faces-redirect=true";
     }
 }

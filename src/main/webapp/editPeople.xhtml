@@ -30,20 +30,26 @@ and open the template in the editor.
             <ui:define name="content">
                 <h:form>
                     <h:panelGroup rendered="#{editPeople.personID != null}">
-                        <h:outputLabel value="#{msg.id} :" for="id"/>
-                        <h:outputText id="id" value="#{editPeople.person.id}"/>
+                        <label>#{msg.id}</label>
+                        <h:outputText title="#{msg.id}" 
+                                      value="#{editPeople.person.id}">
+                        </h:outputText>
                     </h:panelGroup>
                     <br/>
-                    <h:outputLabel value="#{msg.fn} :" for="fn"/>
-                    <h:inputText id="fn" value="#{editPeople.person.firstName}"/>
+                    <label>#{msg.fn}</label>
+                    <h:inputText title="#{msg.fn}" 
+                                 value="#{editPeople.person.firstName}" required="true">
+                    </h:inputText>
                     <br/>
-                    <h:outputLabel value="#{msg.ln} :" for="ln"/>
-                    <h:inputText id="ln" value="#{editPeople.person.lastName}"/>
+                    <label>#{msg.ln}</label>
+                    <h:inputText title="#{msg.ln}" 
+                                 value="#{editPeople.person.lastName}" required="true">
+                    </h:inputText>
                     <br/>
                     <h:commandButton value="#{msg.reset}" action="#{editPeople.resetPerson}" />
                     <h:commandButton rendered="#{editPeople.personID != null}" value="#{msg.ok}" action="#{editPeople.updatePerson}"/>
                     <h:commandButton rendered="#{editPeople.personID == null}" value="#{msg.ok}" action="#{editPeople.addPerson}"/>
-                    <h:commandButton value="#{msg.cancel}" action="#{editPeople.returnHome()}" />           
+                    <h:commandButton value="#{msg.cancel}" action="#{editPeople.returnHome()}" immediate="true" />           
                 </h:form>
             </ui:define>
             <ui:define name="bottom">#{msg.odi}</ui:define>
