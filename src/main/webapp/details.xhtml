@@ -26,8 +26,8 @@ and open the template in the editor.
                 <label>#{msg.prod}: #{movieDetails.movie.producer}</label>
 
                 <h:form>
-                    <h:commandButton value="#{msg.edit}" action ="index.xhtml?faces-redirect=true"/>
-                    <!--CHANGER index par bonne page-->
+                    <h:commandButton value="#{msg.edit}" action ="#{movieDetails.edit()}"/>
+
                 </h:form>
 
                 <h1>#{msg.moviePeopleList}</h1>

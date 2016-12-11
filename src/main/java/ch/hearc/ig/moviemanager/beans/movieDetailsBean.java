@@ -36,6 +36,7 @@ public class movieDetailsBean implements Serializable {
 
     /**
      * Getter for person
+     *
      * @return the person
      */
     public Person getPerson() {
@@ -44,6 +45,7 @@ public class movieDetailsBean implements Serializable {
 
     /**
      * Setter for person
+     *
      * @param person the parameter to set
      */
     public void setPerson(Person person) {
@@ -52,6 +54,7 @@ public class movieDetailsBean implements Serializable {
 
     /**
      * Getter for the movie ID
+     *
      * @return the movie ID
      */
     public Long getMovieID() {
@@ -60,6 +63,7 @@ public class movieDetailsBean implements Serializable {
 
     /**
      * Setter for movieID
+     *
      * @param movieID the parameter to set
      */
     public void setMovieID(Long movieID) {
@@ -68,6 +72,7 @@ public class movieDetailsBean implements Serializable {
 
     /**
      * Getter for movie
+     *
      * @return the movie
      */
     public Movie getMovie() {
@@ -76,6 +81,7 @@ public class movieDetailsBean implements Serializable {
 
     /**
      * Setter for movie
+     *
      * @param movie the parameter to set
      */
     public void setMovie(Movie movie) {
@@ -83,10 +89,18 @@ public class movieDetailsBean implements Serializable {
     }
 
     /**
-     * A method to init the xhtml page.
-     * It initialize the movie whit the parameter in the other page
+     * A method to init the xhtml page. It initialize the movie whit the
+     * parameter in the other page
      */
     public void init() {
         movie = services.getMovieWithId(movieID);
+    }
+    
+    /**
+     * Return the parge for editing the current movie
+     * @return the editMovies.xhtml page
+     */
+    public String edit() {
+        return "editMovies.xhtml?faces-redirect=true&id=" + movieID;
     }
 }

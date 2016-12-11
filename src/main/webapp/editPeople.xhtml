@@ -38,12 +38,14 @@ and open the template in the editor.
                     <br/>
                     <label>#{msg.fn}</label>
                     <h:inputText title="#{msg.fn}" 
-                                 value="#{editPeople.person.firstName}" required="true">
+                                 value="#{editPeople.person.firstName}" required="true"
+                                 requiredMessage="#{msg.fnRequired}">
                     </h:inputText>
                     <br/>
                     <label>#{msg.ln}</label>
                     <h:inputText title="#{msg.ln}" 
-                                 value="#{editPeople.person.lastName}" required="true">
+                                 value="#{editPeople.person.lastName}" required="true"
+                                 requiredMessage="#{msg.nameRequired}">
                     </h:inputText>
                     <br/>
                     <h:commandButton value="#{msg.reset}" action="#{editPeople.resetPerson}" />
